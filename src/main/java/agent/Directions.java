@@ -4,6 +4,8 @@
 package agent;
 
 import agent.ActualPosition;
+import java.util.ArrayList;
+import java.util.List;
 import maze.MazePosition;
 
 /**
@@ -12,8 +14,17 @@ import maze.MazePosition;
  */
 public class Directions {
     
-    
-    Integer onlyOne(ActualPosition actualPosition){
-        if()
+    Integer availableDirection(ActualPosition actualPosition){
+        Integer count = 0;
+        MazePosition mazePosition = new MazePosition(actualPosition);
+        List<Integer> directionList = new ArrayList<>();
+        directionList.add(mazePosition.getUp(mazePosition));
+        directionList.add(mazePosition.getDown(mazePosition));
+        directionList.add(mazePosition.getLeft(mazePosition));
+        directionList.add(mazePosition.getRight(mazePosition));
+        for(Integer i : directionList){
+            if(i != 0){count++;}
+        }
+        return count;
     }
 }

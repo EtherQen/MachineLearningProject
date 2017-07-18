@@ -15,7 +15,7 @@ public class MazePosition implements Position{
     protected Integer global_x, global_y;
     Maze myMaze = new Maze();
     
-    MazePosition(ActualPosition actualPosition){
+    public MazePosition(ActualPosition actualPosition){
         global_x = actualPosition.getX() + 1;
         global_y = actualPosition.getY() + 1;
     }
